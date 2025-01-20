@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Recipe",
+  "definitions": {
+    "Recipe": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "info": {
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            }
+          },
+          "required": ["name", "description"]
+        },
+        "ingredients": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number"]
+          }
+        },
+        "seasonings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "steps": {
+          "$ref": "#/definitions/Steps"
+        }
+      },
+      "required": [
+        "info",
+        "ingredients",
+        "seasonings",
+        "steps"
+      ],
+      "title": "Recipe"
+    },
+    "Steps": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Step"
+        }
+      },
+      "title": "Steps"
+    },
+    "Step": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/NormalStep"
+        },
+        {
+          "$ref": "#/definitions/GotoStep"
+        }
+      ],
+      "title": "Step"
+    },
+    "NormalStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "from": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "ingredients": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minutes": {
+          "type": "integer"
+        }
+      },
+      "required": ["text"],
+      "title": "NormalStep"
+    },
+    "GotoStep": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "goto": {
+          "type": "string"
+        }
+      },
+      "required": ["goto"],
+      "title": "GotoStep"
+    }
+  }
+}

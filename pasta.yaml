@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=./schema.json
+
+info:
+  name: Pasta
+  description: Fully homemade without any store-bought pasta sauce. Takes a bit of time but easier than it looks!
+
+ingredients:
+  tomato chunks: 200 grams
+  pasta: 100 grams
+  zucchini: 0.5
+  mushrooms: 100 grams
+  onion: 1
+seasonings:
+  - basil
+  - italian herbs
+  - garlic
+  - salt
+  - olive oil
+  - grated cheese
+
+steps:
+  sauce:
+    - text: cut
+      ingredients: [ onion, zucchini, mushrooms ]
+    - text: add to pan
+      ingredients: [ olive oil ]
+    - text: saute
+      ingredients: [ onion ]
+      minutes: 2
+    - text: add
+      ingredients: [ zucchini, mushrooms ]
+      minutes: 5
+    - text: add
+      ingredients: [ tomato chunks ]
+    - text: add
+      ingredients: [ basil, italian herbs, garlic, salt ]
+      minutes: 2
+    - goto: serve
+  pasta:
+    - text: boil
+      ingredients: [ pasta, salt ]
+      minutes: 12
+    - goto: serve
+  serve:
+    - text: serve
+      from: [ pasta, sauce ]
+      ingredients: [ grated cheese ]
+    - text: top with
+      ingredients: [ grated cheese ]
