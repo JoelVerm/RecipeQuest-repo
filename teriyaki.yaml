@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=./schema.json
+
+info:
+  name: Teriyaki
+  description: Adapted and simplified from a recipe my nephew shared.
+  author: FlamiDev
+
+ingredients:
+  beef chunks: 150 grams
+  mushrooms: 100 grams
+  snow peas: 100 grams
+  onion: 0.5
+  spring onion: 1
+  carrot: 1
+  rice: 100 grams
+seasonings:
+  - soy sauce
+  - honey
+  - ginger
+  - paprika
+  - garlic
+  - curry powder
+
+steps:
+  beef:
+    - text: mix
+      ingredients: [ soy sauce, honey, ginger, paprika, curry powder ]
+    - text: marinate
+      ingredients: [ beef chunks ]
+      minutes: 30
+    - text: fry
+      minutes: 5
+    - goto: sauce
+  veggies:
+    - text: chop
+      ingredients: [ mushrooms, snow peas, onion, spring onion, carrot ]
+    - goto: sauce
+  sauce:
+    - text: add
+      from: [ beef, veggies ]
+    - text: add
+      ingredients: [ soy sauce, garlic ]
+    - goto: serve
+  rice:
+    - text: cook
+      ingredients: [ rice ]
+      minutes: 12
+    - goto: serve
+  serve:
+    - text: serve
+      from: [ rice, sauce ]

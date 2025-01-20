@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=./schema.json
+
+info:
+  name: Lentil soup
+  description: |
+    My friend asked me to help him make this soup.
+    As always, I started simplifying the recipe and ended up with this one.
+    The dish was delicious so I thought I’d share it with you.
+  author: FlamiDev
+
+materials:
+  - immersion blender
+
+ingredients:
+  sweet potato: 1
+  carrot: 1
+  onion: 0.5
+  red lentils: 100 grams
+  greek yogurt: 2 tablespoons
+seasonings:
+  - chili flakes
+  - paprika
+  - curry powder
+  - garlic
+
+steps:
+  do:
+    - text: peel and chop
+      ingredients: [ sweet potato, carrot, onion ]
+    - text: add to pan
+      ingredients: [ olive oil ]
+    - text: sauté
+      ingredients: [ sweet potato, carrot, onion ]
+    - text: add
+      ingredients: [ water, red lentils ]
+    - text: add
+      ingredients: [ paprika, curry powder, garlic ]
+    - text: cook
+      minutes: 15
+    - text: blend
+    - text: cook
+      minutes: 5
+    - text: serve
+      ingredients: [ greek yogurt, chili flakes ]

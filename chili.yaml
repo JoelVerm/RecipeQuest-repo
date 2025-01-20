@@ -1,0 +1,43 @@
+# yaml-language-server: $schema=./schema.json
+
+info:
+  name: Chili
+  description: The most basic chili possible, ready in 15 minutes!
+  author: FlamiDev
+
+ingredients:
+  tomato chunks: 100 grams
+  rice: 100 grams
+  kidney beans: 100 grams
+  minced meat: 50 grams
+  mixed vegetables: 100 grams
+  onion: 0.5
+seasonings:
+  - garlic
+  - paprika
+  - curry powder
+  - salt
+  - cinnamon
+
+steps:
+  chili:
+    - text: stir fry
+      ingredients: [ mixed vegetables, onion ]
+      minutes: 5
+    - text: add
+      ingredients: [ minced meat ]
+      minutes: 2
+    - text: add
+      ingredients: [ tomato chunks, kidney beans ]
+      minutes: 5
+    - text: season
+      ingredients: [ garlic, paprika, curry powder, salt, cinnamon ]
+    - goto: serve
+  rice:
+    - text: cook
+      ingredients: [ rice ]
+      minutes: 12
+    - goto: serve
+  serve:
+    - text: serve
+      from: [ chili, rice ]

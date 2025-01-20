@@ -7,6 +7,8 @@
       "additionalProperties": false,
       "properties": {
         "info": {
+          "type": "object",
+          "additionalProperties": false,
           "properties": {
             "name": {
               "type": "string"
@@ -14,16 +16,32 @@
             "description": {
               "type": "string"
             },
+            "author": {
+              "type": "string"
+            },
             "image": {
               "type": "string"
             }
           },
-          "required": ["name", "description"]
+          "required": [
+            "name",
+            "description",
+            "author"
+          ]
+        },
+        "materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         },
         "ingredients": {
           "type": "object",
           "additionalProperties": {
-            "type": ["string", "number"]
+            "type": [
+              "string",
+              "number"
+            ]
           }
         },
         "seasonings": {
@@ -88,7 +106,9 @@
           "type": "integer"
         }
       },
-      "required": ["text"],
+      "required": [
+        "text"
+      ],
       "title": "NormalStep"
     },
     "GotoStep": {
@@ -99,7 +119,9 @@
           "type": "string"
         }
       },
-      "required": ["goto"],
+      "required": [
+        "goto"
+      ],
       "title": "GotoStep"
     }
   }

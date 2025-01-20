@@ -3,13 +3,14 @@
 info:
   name: Pasta
   description: Fully homemade without any store-bought pasta sauce. Takes a bit of time but easier than it looks!
+  author: FlamiDev
 
 ingredients:
   tomato chunks: 200 grams
   pasta: 100 grams
   zucchini: 0.5
   mushrooms: 100 grams
-  onion: 1
+  onion: 0.5
 seasonings:
   - basil
   - italian herbs
@@ -44,6 +45,5 @@ steps:
   serve:
     - text: serve
       from: [ pasta, sauce ]
-      ingredients: [ grated cheese ]
     - text: top with
       ingredients: [ grated cheese ]
